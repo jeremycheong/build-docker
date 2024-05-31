@@ -24,10 +24,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user and switch to it
-RUN adduser --home /home/${USERNAME} --shell /bin/bash --disabled-password --gecos '' ${USERNAME} && \
-    adduser ${USERNAME} sudo && \
-    echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/90-user && \
-    usermod -u ${GUID} ${USERNAME} && usermod -G ${GUID} ${USERNAME}
+RUN addgroup --gid ${G_U_ID} ${USER_NAME} && \
+    adduser --home /home/${USER_NAME} --shell /bin/bash --disabled-password --uid ${G_U_ID} --gid ${G_U_ID} --gecos '' ${USER_NAME} && \
+    adduser ${USER_NAME} sudo && \
+    echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/90-user
 
 # use non-root user
 USER ${USERNAME}

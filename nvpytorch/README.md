@@ -1,6 +1,6 @@
 ### 镜像构建        
 默认参数变量：  
-* VERSION="22.11"
+* VERSION="22.12"
 * USER_NAME=zhangym
 * G_U_ID=1000   
 构建指令：
