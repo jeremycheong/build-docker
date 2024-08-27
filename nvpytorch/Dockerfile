@@ -50,7 +50,7 @@ RUN cp ./app/basic.vim /home/${USER_NAME}/.vimrc && \
     rm -rf ./app && \    
     sudo rm -rf /tmp/*
     
-ENV PATH=/home/${USERNAME}/.local/bin:$PATH \
+ENV PATH=/home/${USER_NAME}/.local/bin:$PATH \
     FORCE_CUDA="1" \
     LANG=C.UTF-8
 
