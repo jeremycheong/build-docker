@@ -2,7 +2,7 @@
 默认参数变量：  
 * VERSION="22.12"
 * USER_NAME=zhangym
-* G_U_ID=1000   
+* GUID=1000   
 构建指令：
 ```sh
 docker build -t nvpytorch:1.13-cuda11.8 .

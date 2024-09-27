@@ -54,6 +54,4 @@ ENV PATH=/home/${USER_NAME}/.local/bin:$PATH \
     FORCE_CUDA="1" \
     LANG=C.UTF-8
 
-CMD [ "/usr/sbin/sshd", "-D" ]
-
-
+CMD ["sudo", "/usr/sbin/sshd", "-D" ]
