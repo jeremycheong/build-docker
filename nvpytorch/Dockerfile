@@ -35,8 +35,8 @@ USER ${USER_NAME}
 
 # Install python packages
 RUN python -m pip install -U --no-cache-dir --upgrade pip && \    
-    pip install -U --no-cache-dir openmim yacs scikit-learn opencv-python-headless && \    
-    /home/${USER_NAME}/.local/bin/mim install mmengine mmcv
+    pip install -U --no-cache-dir yacs scikit-learn opencv-python-headless  
+    # /home/${USER_NAME}/.local/bin/mim install mmengine mmcv
 
 # Create a working directory
 RUN mkdir /home/${USER_NAME}/workspace 
@@ -52,6 +52,7 @@ RUN cp ./app/basic.vim /home/${USER_NAME}/.vimrc && \
     
 ENV PATH=/home/${USER_NAME}/.local/bin:$PATH \
     FORCE_CUDA="1" \
-    LANG=C.UTF-8
+    LANG=C.UTF-8 \
+    TimeZone=Asia/Shanghai
 
 CMD ["sudo", "/usr/sbin/sshd", "-D" ]
